@@ -5,6 +5,6 @@ index.html: techtalk-vagrant.md reveal.js
 	pandoc \
 		--standalone \
 		--to=revealjs \
-		--variable=theme:white \
+		--variable=theme:custom \
 		--highlight-style=zenburn \
 		--output $@ $<
