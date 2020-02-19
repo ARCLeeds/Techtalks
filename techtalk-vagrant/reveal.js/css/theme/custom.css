@@ -283,8 +283,3 @@ body {
 *
 *
 */
-#scriptable-virtual-environments-with-vagrant {
-  background-image: url("../../../images/miniLogo.png"), url("../../../images/hexlogowoText.png");
-  background-repeat: no-repeat, no-repeat;
-  background-position: bottom 0px right 0px, bottom 0px left 0px;
-  background-size: 25%, 45%; }
