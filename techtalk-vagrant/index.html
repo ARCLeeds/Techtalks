@@ -42,6 +42,9 @@
 <section id="scriptable-virtual-environments-with-vagrant" class="slide level2">
 <h2>Scriptable virtual environments with Vagrant</h2>
 <p><img data-src="images/vagrant-logo.png" /></p>
+<small class="float-left">
+  <p>Where does this live?</p>
+</small>
 </section>
 <section id="got-a-question" class="slide level2">
 <h2>Got a question?</h2>
@@ -201,8 +204,10 @@
     </ul>
         <pre>
           <code>
-            $ vagrant init hashicorp/bionic64
-            $ vagrant up
+            $ git clone https://github.com/heidemn/vagrant-bionic-desktop.git
+            $ cd vagrant-bionic-desktop
+            $ vagrant up 2>&1 | tee log.txt
+            $ vagrant reload
           </code>
         </pre>
   </section>

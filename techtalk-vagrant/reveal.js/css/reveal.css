@@ -1604,3 +1604,11 @@ body {
 
 .zoomed .reveal .roll span:after {
   visibility: hidden; }
+
+.float-right {
+  float: right;
+}
+
+.float-left {
+  float: left;
+}
