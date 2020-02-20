@@ -1,1 +1,4 @@
 # gitignore for presentations
+
+# exclude all local .vagrant data
+techtalk-vagrant/*/*/.vagrant/*
