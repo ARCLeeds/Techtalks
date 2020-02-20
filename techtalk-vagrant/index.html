@@ -114,6 +114,19 @@
           <code>
             $ vagrant init hashicorp/bionic64
             $ vagrant up
+            $ vagrant ssh
+          </code>
+        </pre>
+  </section>
+  <section id="vagrant-commands-vagrantfile" class="slide level2">
+    <h2>Vagrantfile</h2>
+    <p>A single script to initialize a VM</p>
+        <pre>
+          <code>
+            # Basic Vagrantfile
+            Vagrant.configure("2") do |config|
+              config.vm.box = "hashicorp/bionic64"
+            end
           </code>
         </pre>
   </section>
@@ -131,7 +144,7 @@
           </code>
         </pre>
   </section>
-  <section id="vagrant-commands-box-add" class="slide level2">
+  <section id="vagrant-commands-provisioning" class="slide level2">
     <h2>Provisioning</h2>
     <ul style="list-style-type:none;">
       <li>
@@ -139,32 +152,45 @@
       </li>
     </ul>
     <div style="display:flex">
-      <div style="flex:1;">
+      <div style="flex:1.2;">
         <pre>
           <code>
-            #!/usr/bin/env bash
+  #!/usr/bin/env bash
+  # bootstrap.sh
 
-            apt-get update
-            apt-get install -y apache2
-            if ! [ -L /var/www ]; then
-              rm -rf /var/www
-              ln -fs /vagrant /var/www
-            fi
+  apt-get update
+  apt-get install -y apache2
+  if ! [ -L /var/www ]; then
+    rm -rf /var/www
+    ln -fs /vagrant /var/www
+  fi
           </code>
         </pre>
       </div>
-      <div style="flex:1;">
+      <div style="flex:2;">
         <pre>
           <code>
-            Vagrant.configure("2") do |config|
-              config.vm.box = "hashicorp/bionic64"
-              config.vm.provision :shell, path: "bootstrap.sh"
-            end
+  # line in your Vagrantfile
+  Vagrant.configure("2") do |config|
+    config.vm.box = "hashicorp/bionic64"
+    config.vm.provision :shell, path: "bootstrap.sh"
+  end
           </code>
         </pre>
       </div>
+  </section>
+  <section id="vagrant-commands-destroy" class="slide level2">
+    <h2>Cleaning up Vagrant</h2>
+    <p>Switching off your Vagrant VM</p>
+        <pre>
+          <code>
+            $ vagrant suspend
 
+            $ vagrant halt
 
+            $ vagrant destroy
+          </code>
+        </pre>
   </section>
 </section>
 <section id="vagrant-case-studies">
@@ -238,8 +264,8 @@
 <section id="further-coding" class="slide level2">
   <h2>Further coding/reading</h2>
   <ul>
-    <li>These slides <\link></li>
-    <li>Code used in case studies <\link> </li>
+    <li><a href="https://sparrow0hawk.github.io/presentations/techtalk-vagrant/#/title-slide">These slides</a></li>
+    <li><a href="https://github.com/Sparrow0hawk/presentations/tree/master/techtalk-vagrant">Code used in case studies</a></li>
     <li><a href="https://www.vagrantup.com/intro/getting-started/index.html">Vagrant documentation</a></li>
     <li><a href="https://github.com/iJackUA/awesome-vagrant">Awesome Vagrant stuff list </a></li>
   </ul>
