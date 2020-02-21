@@ -4,11 +4,17 @@ Vagrant.configure(2) do |config|
   config.vm.box = "hashicorp/bionic64"
   # run bootstrap.sh when vagrant sets up the VM
   # the file path is relative to the project root (where Vagrantfile is)
+  # this line sets the name of the vm in vagrant status
+  config.vm.define :voila_app do |t|
+  end
   config.vm.provision :shell, path: "bootstrap.sh"
   # set up voila systemd
-  config.vm.provision "file", source: "voila.service", destination: "~/"
+  # provision systemd unit file
+  config.vm.provision "file", source: "voila.service", destination: "/home/vagrant/"
+  # provision voila_run.sh file
+  config.vm.provision "file", source: "voila_run.sh", destination: "/home/vagrant/"
   config.vm.provision "shell",
-    inline: "mv ~/voila.service /etc/systemd/system/
+    inline: "mv /home/vagrant/voila.service /etc/systemd/system/
              systemctl daemon-reload;
              systemctl enable voila;
              systemctl start voila;"

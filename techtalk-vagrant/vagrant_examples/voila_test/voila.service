@@ -3,7 +3,7 @@ Description=Sample Voila app
 [Service]
 User=vagrant
 Group=www-data
-ExecStart=/bin/bash -c 'conda activate voila-hello-world-example && voila --port=4567 --no-browser ~/hello-world-example/app.ipynb'
+ExecStart=/bin/bash /home/vagrant/voila_run.sh
 
 [Install]
 WantedBy=multi-user.target
