@@ -250,12 +250,12 @@
   <section id="vagrant-case-studies-port" class="slide level2">
     <h2>Vagrant case studies </h2>
     <ul style="list-style-type:none;">
-      <li>Port forwarding for web apps</li>
+      <li>So you've got a nice shiny/flask app you want to develop and test before putting it on a server?</li>
     </ul>
         <pre>
           <code>
-            $ vagrant init hashicorp/bionic64
-            $ vagrant up
+  # line in your Vagrantfile
+  config.vm.network :forwarded_port, guest: 4567, host: 4567
           </code>
         </pre>
   </section>
