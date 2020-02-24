@@ -254,8 +254,12 @@
     </ul>
         <pre>
           <code>
-            $ vagrant init hashicorp/bionic64
-            $ vagrant up
+                      $ vagrant up
+                      ...
+                      $ vagrant ssh
+                      ...
+                      vagrant@bionic64:~$ ls /vagrant
+                      Vagrantfile
           </code>
         </pre>
   </section>
@@ -266,8 +270,13 @@
     </ul>
         <pre>
           <code>
-  # line in your Vagrantfile
-  config.vm.network :forwarded_port, guest: 4567, host: 4567
+    Vagrant.configure(2) do |config|
+      config.vm.box = "hashicorp/bionic64"
+      # run bootstrap.sh when vagrant sets up the VM
+      config.vm.provision :shell, path: "bootstrap.sh"
+      # networking through Vagrant
+      <mark>config.vm.network :forwarded_port, guest: 4567, host: 4567</mark>
+    end
           </code>
         </pre>
   </section>
