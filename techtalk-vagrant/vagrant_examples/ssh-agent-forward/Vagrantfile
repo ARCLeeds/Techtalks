@@ -1,6 +1,7 @@
 
 Vagrant.configure("2") do |config|
   config.vm.box = "hashicorp/bionic64"
+  # specifies the name of the vagrant box
   config.vm.define :ssh_forward do |t|
   end
   # line to forward active ssh agent from host to guest
