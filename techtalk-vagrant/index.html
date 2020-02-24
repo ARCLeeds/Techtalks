@@ -226,8 +226,12 @@
     </ul>
         <pre>
           <code>
-            $ vagrant init hashicorp/bionic64
-            $ vagrant up
+      Vagrant.configure("2") do |config|
+        config.vm.box = "hashicorp/bionic64"
+        # line to forward active ssh agent from host to guest
+        <mark>config.ssh.forward_agent = true</mark>
+        config.vm.provision :shell, path: "bootstrap.sh"
+      end
           </code>
         </pre>
   </section>
