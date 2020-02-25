@@ -235,18 +235,6 @@
           </code>
         </pre>
   </section>
-  <section id="vagrant-case-studies-docker" class="slide level2">
-    <h2>Vagrant case studies </h2>
-    <ul style="list-style-type:none;">
-      <li>Building Docker containers</li>
-    </ul>
-        <pre>
-          <code>
-            $ vagrant init hashicorp/bionic64
-            $ vagrant up
-          </code>
-        </pre>
-  </section>
   <section id="vagrant-case-studies-host-files" class="slide level2">
     <h2>Vagrant case studies </h2>
     <ul style="list-style-type:none;">
@@ -277,6 +265,23 @@
       # networking through Vagrant
       <mark>config.vm.network :forwarded_port, guest: 4567, host: 4567</mark>
     end
+          </code>
+        </pre>
+  </section>
+  <section id="vagrant-case-studies-docker" class="slide level2">
+    <h2>Vagrant case studies </h2>
+    <ul style="list-style-type:none;">
+      <li>Building Docker containers</li>
+    </ul>
+        <pre>
+          <code>
+        Vagrant.configure("2") do |config|
+          config.vm.box = "pogosoftware/ubuntu-18.04-docker"
+          config.vm.network "forwarded_port", guest: 8000, host: 8000
+          config.vm.provision "shell", inline: <<-SHELL
+          git clone https://github.com/datawire/hello-world.git
+          SHELL
+        end
           </code>
         </pre>
   </section>
