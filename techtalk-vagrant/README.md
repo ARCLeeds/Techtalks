@@ -1,3 +1,3 @@
 # 2020-02-27 TechTalk on Vagrant
 
-See the slides https://sparrow0hawk.github.io/presentations/techtalk-vagrant/
+See the slides https://arcleeds.github.io/Techtalks/techtalk-vagrant/#/title-slide
