@@ -1,0 +1,35 @@
+Bootstrap: docker
+From: ubuntu:16.04
+
+IncludeCmd: yes
+
+%labels
+    AUTHOR icaoberg
+    MAINTAINER icaoberg@alumni.cmu.edu
+    WEBSITE http://linus.cbd.cs.cmu.edu
+    VERSION 1.0
+
+%runscript
+    exec /bin/bash "$@"
+
+%post
+    /usr/bin/apt-get update 
+    /usr/bin/apt-get install -y gnuplot
+
+    if [ ! -d /images ]; then mkdir /images; fi
+    if [ ! -d /projects ]; then mkdir /projects; fi
+    if [ ! -d /containers ]; then mkdir /containers; fi
+    if [ ! -d /share ]; then mkdir /share; fi
+    if [ ! -d /scratch ]; then mkdir /scratch; fi
+    if [ ! -d /webservers/pfenningweb ]; then mkdir -p /webservers/pfenningweb; fi
+
+####################################################################################
+%appenv gnuplot
+    APP=/path/to/gnuplot
+    export APP
+
+%apphelp gnuplot
+    For more information about goto visit http://www.gnuplot.info
+
+%apprun gnuplot
+    gnuplot "$@"

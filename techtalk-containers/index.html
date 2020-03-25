@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="author" content="John Hodrien">
+  <meta name="dcterms.date" content="2020-03-27">
+  <title>Containers for Research</title>
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+  <link rel="stylesheet" href="reveal.js/css/reveal.css">
+  <style type="text/css">
+      code{white-space: pre-wrap;}
+      span.smallcaps{font-variant: small-caps;}
+      span.underline{text-decoration: underline;}
+      div.column{display: inline-block; vertical-align: top; width: 50%;}
+  </style>
+  <link rel="stylesheet" href="reveal.js/css/theme/custom.css" id="theme">
+  <!-- Printing and PDF exports -->
+  <script>
+    var link = document.createElement( 'link' );
+    link.rel = 'stylesheet';
+    link.type = 'text/css';
+    link.href = window.location.search.match( /print-pdf/gi ) ? 'reveal.js/css/print/pdf.css' : 'reveal.js/css/print/paper.css';
+    document.getElementsByTagName( 'head' )[0].appendChild( link );
+  </script>
+  <!--[if lt IE 9]>
+  <script src="reveal.js/lib/js/html5shiv.js"></script>
+  <![endif]-->
+</head>
+<body>
+  <div class="reveal">
+    <div class="slides">
+
+<section id="title-slide">
+  <img data-src="images/techtalk_logo.png" width="75%" />
+</section>
+
+<section id="scriptable-virtual-environments-with-containers" class="slide level2">
+  <h2>Containers for Research</h2>
+  <p><img data-src="images/singularity-logo.svg" width="25%" /><img data-src="images/Moby-logo.png" width="25%"/></p>
+  <small class="float-left">
+    <p>March 27th 2020</p>
+  </small>
+  <small class="float-right">
+    <p>
+      <a href="https://arcleeds.github.io/Techtalks/techtalk-containers/#/title-slide">https://bit.ly/techtalk-containers</a>
+    </p>
+  </small>
+</section>
+
+<section id="got-a-question" class="slide level2">
+  <h2>Got a question?</h2>
+  <p>Feel free to put questions up in chat as we go along, and I'll try to answer</p>
+</section>
+
+<section id="whoami" class="slide level2">
+  <h2>Whoami</h2>
+  <i><p>John Hodrien</p></i>
+  <ul>
+    <li>Research Software Engineer from Research Computing</li>
+    <li>Previously:
+      <ul>
+        <li>Teaching Assistant in the School of Computing</li>
+        <li>Researcher in Grid Computing and Visualisation</li>
+        <li>Linux/IRIX System Administrator</li>
+      </ul>
+    </li>
+    <li>Contact me...
+      <ul>
+        <li><a href="mailto:J.H.Hodrien@leeds.ac.uk">J.H.Hodrien@leeds.ac.uk</a></li>
+      </ul>
+    </li>
+  </ul>
+</section>
+
+<section id="agenda" class="slide level2">
+  <h2>Agenda</h2>
+  <ul>
+    <li>What are Containers?</li>
+    <li>Basic Container commands</li>
+    <li>Container run throughs:
+      <ul>
+        <li>Using prebuilt containers</li>
+        <li>Building containers</li>
+        <li>Using GPUs with containers</li>
+        <li>Accessing host files</li>
+      </ul>
+    </li>
+    <li>How do I get it?</li>
+    <li>Further notes</li>
+  </ul>
+</section>
+
+<section id="what-are-containers">
+  <h2>What are Containers?</h2>
+  <section id="what-are-containers-1" class="slide level2">
+    <p>Is this a familiar conversation?</p>
+    <ul style="list-style-type:none;">
+      <li style="color: red;">"I've got some really cool code, want a go?"</li>
+      <br />
+      <li style="text-align:right; color: blue;">"Yes sure, send it to me!"</li>
+      <br />
+      <li style="text-align:right; color: blue;">"Err, it's giving me an error?"</li>
+      <br />
+      <li style="color: red;">"Well, it worked on my machine..."</li>
+    </ul>
+  </section>
+  <section id="what-are-containers-2" class="slide level2">
+    <br />
+    <ul>
+      <li>Docker, Singularity
+      <li>Open source tool for building and managing virtual environments in a single workflow</li>
+      <li>Using a single file you can specify the exact environment required for your workflow</li>
+      <li>Doesn't require an underlying Hypervisor (Virtualisation platform)</li>
+      <li>Runs on Windows, macOS and Linux</li>
+    </ul>
+  </section>
+  <section id="what-are-containers-3" class="slide level2">
+    <br />
+    <ul>
+      <li>Virtual Machines vs Containers</li>
+        <img data-src="images/containers-vs-vms.png" />
+      <li>Containers vs Images vs Recipes</li>
+      <li>Registries/Hubs</li>
+    </ul>
+  </section>
+</section>
+
+<section id="singularity-commands">
+  <section id="singularity-commands-init" class="slide level2">
+    <h2>Basic Singularity commands </h2>
+    <ul style="list-style-type:none;">
+      <li>Running a simple preexisting container</li>
+    </ul>
+    <br />
+    From <a href="https://singularity-hub.org/">SingularityHub</a> <a href="https://github.com/GodloveD/lolcow/blob/master/Singularity">(recipe)</a>:
+    <pre>
+      <code>
+        $ singularity run shub://GodloveD/lolcow
+      </code>
+    </pre>
+    From <a href="https://hub.docker.com/">DockerHub</a> <a href="https://github.com/GodloveD/lolcow/blob/master/Dockerfile">(recipe)</a>:
+    <pre>
+      <code>
+        $ singularity run docker://godlovedc/lolcow
+      </code>
+    </pre>
+  </section>
+  <section id="singularity-commands-pull" class="slide level2">
+    <h2>Singularity pull</h2>
+    <ul style="list-style-type:none;">
+      <li>
+        You're likely to want an actual copy of an image, as repeatedly requesting a remote image causes problems:
+      </li>
+    </ul>
+    <pre>
+      <code>
+        $ singularity pull shub://GodloveD/lolcow
+        $ singularity run lolcow_latest.sif
+      </code>
+    </pre>
+  </section>
+  <section id="singularity-commands-singularityfile" class="slide level2">
+    <h2>Singularity Definition File for lolcow(Recipe)</h2>
+    <p><a href="https://sylabs.io/guides/3.0/user-guide/definition_files.html">A simple definition for creating an image</a></p>
+    <pre>
+      <code>
+        # Basic Singularity.def
+        BootStrap: docker
+        From: ubuntu:16.04
+
+        %post
+          apt-get -y update
+          apt-get -y install fortune cowsay lolcat
+
+        %environment
+          export LC_ALL=C
+          export PATH=/usr/games:$PATH
+
+        %runscript
+          fortune | cowsay | lolcat
+      </code>
+    </pre>
+  </section>
+  <section id="singularity-commands-destroy" class="slide level2">
+    <h2>Cleaning up Singularity</h2>
+    <p>Cleaning up what you've done</p>
+    <pre>
+      <code>
+        $ singularity cache list
+
+        $ singularity cache clean
+
+        $ rm lolcow_latest.sif 
+      </code>
+    </pre>
+  </section>
+</section>
+
+<section id="container-run-throughs">
+  <h2>Container run throughs</h2>
+  <section id="container-run-throughs-intro" class="slide level2">
+    <p>Test all this code out yourself using the <a href="https://github.com/ARCLeeds/Techtalks">containers_examples</a> directory in the GitHub Repo for this presentation</p>
+    <ul>
+      <li>Before I do anything, setup a vagrant VM as learnt in the previous TechTalk</li>
+    </ul>
+  </section>
+  <section id="container-run-throughs-gnuplot" class="slide level2">
+    <ul style="list-style-type:none;">
+      <li>Use a simple gnuplot container</li>
+    </ul>
+    <pre>
+      <code>
+        $ singularity pull shub://icaoberg/singularity-gnuplot
+        $ singularity run --app gnuplot singularity-gnuplot_latest.sif
+      </code>
+    </pre>
+  </section>
+  <section id="container-run-throughs-building" class="slide level2">
+    <ul style="list-style-type:none;">
+      <li>Let's actually build a container</li>
+    </ul>
+    <pre>
+      <code>
+        $ singularity pull shub://icaoberg/singularity-gnuplot
+        $ singularity run --app gnuplot singularity-gnuplot_latest.sif
+      </code>
+    </pre>
+  </section>
+  <section id="container-run-throughs-host-files" class="slide level2">
+    <ul style="list-style-type:none;">
+      <li>Accessing host machine files on Containers</li>
+    </ul>
+    <pre>
+      <code>
+        $ singularity shell singularity-gnuplot_latest.sif
+      </code>
+    </pre>
+    <ul>
+      <li>Home directory and /tmp are mounted by default</li>
+      <li>Additional paths can be mounted using -B</li>
+    </ul>
+    <pre>
+      <code>
+        $ singularity shell -B /nobackup:/nobackup singularity-gnuplot_latest.sif
+      </code>
+    </pre>
+  </section>
+</section>
+
+<section id="how-do-i-get-it" class="slide level2">
+  <h2>Getting software installed to use Containers</h2>
+  <ul style="list-style-type:none;">
+    <li>Singularity is already installed on most Linux campus systems</li>
+    <li>Docker will not be installed</li>
+    <li>Available as a module on ARC</li>
+    <li>Put in a request if it's not available to get it installed</li>
+  </ul>
+  <p><a href="https://it.leeds.ac.uk/it?id=sc_cat_item&sys_id=272605d90f672600bb0a079ce1050ebc">Submit an install request now!</a>
+</section>
+<section id="further-coding" class="slide level2">
+  <h2>Further coding/reading</h2>
+  <ul>
+    <li><a href="https://arcleeds.github.io/Techtalks/techtalk-containers/#/title-slide">These slides</a></li>
+    <li><a href="https://github.com/ARCLeeds/Techtalks/tree/master/techtalk-containers/containers_examples">Code used in case studies</a></li>
+    <li><a href="https://www.containersup.com/intro/getting-started/index.html">Containers documentation</a></li>
+    <li><a href="https://github.com/iJackUA/awesome-containers">Awesome Containers stuff list </a></li>
+  </ul>
+</section>
+<section id="coming-up" class="slide level2">
+  <h2>Coming up</h2>
+  <ul style="list-style-type:none;">
+    <li>The next TechTalk (date TBC) will be on Conda!</li>
+    <br />
+    <li>Join us for an informal chat with the Research Computing Team</li>
+    <br />
+    <li>Subscribe to the Research Computing mailing list by sending an email to
+      <a href="mailto:research-computing-join@lists.leeds.ac.uk">research-computing-join@lists.leeds.ac.uk</a>
+       with Subscribe as the subject </li>
+  </ul>
+</section>
+<section id="feedback" class="slide level2">
+  <h2>Please give us some feedback!</h2>
+<iframe width="640px" height= "480px"
+src="https://forms.office.com/Pages/ResponsePage.aspx?id=qO3qvR3IzkWGPlIypTW3y7U8gIAi6LpMg7rjkJ9mZ3tUOE41VzNLMzJNR1NEOVQ5N0pLUlYwUTNNRi4u&embed=true"
+frameborder= "0" marginwidth= "0" marginheight= "0" style= "border: none; max-width:100%;
+max-height:100vh" allowfullscreen webkitallowfullscreen mozallowfullscreen msallowfullscreen>
+</iframe>
+</section>
+    </div>
+  </div>
+
+  <script src="reveal.js/lib/js/head.min.js"></script>
+  <script src="reveal.js/js/reveal.js"></script>
+
+  <script>
+
+      // Full list of configuration options available at:
+      // https://github.com/hakimel/reveal.js#configuration
+      Reveal.initialize({
+        // Push each slide change to the browser history
+        history: true,
+
+        // Optional reveal.js plugins
+        dependencies: [
+          { src: 'reveal.js/lib/js/classList.js', condition: function() { return !document.body.classList; } },
+          { src: 'reveal.js/plugin/zoom-js/zoom.js', async: true },
+          { src: 'reveal.js/plugin/notes/notes.js', async: true }
+        ]
+      });
+    </script>
+    </body>
+</html>

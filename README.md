@@ -9,3 +9,7 @@ https://arcleeds.github.io/Techtalks/techtalk-reproRes/TechTalk-Reproducible%20R
 ## Scriptable virtual environments with Vagrant
 27/02/2020
 https://arcleeds.github.io/Techtalks/techtalk-vagrant/#/title-slide
+
+## Containers for Research
+27/03/2020
+https://arcleeds.github.io/Techtalks/techtalk-containers/#/title-slide
