@@ -204,6 +204,9 @@
     <p>Test all this code out yourself using the <a href="https://github.com/ARCLeeds/Techtalks">containers_examples</a> directory in the GitHub Repo for this presentation</p>
     <ul>
       <li>Before I do anything, setup a vagrant VM as learnt in the previous TechTalk</li>
+      <pre>
+        <code>$ vagrant up</code>
+      </pre>
     </ul>
   </section>
   <section id="container-run-throughs-gnuplot" class="slide level2">
@@ -223,10 +226,10 @@
     </ul>
     <pre>
       <code>
-        $ singularity pull shub://icaoberg/singularity-gnuplot
-        $ singularity run --app gnuplot singularity-gnuplot_latest.sif
+        $ singularity build bastet Singularity.def
       </code>
     </pre>
+    You're going to need sudo/root/vagrant at this point.
   </section>
   <section id="container-run-throughs-host-files" class="slide level2">
     <ul style="list-style-type:none;">
@@ -264,8 +267,9 @@
   <ul>
     <li><a href="https://arcleeds.github.io/Techtalks/techtalk-containers/#/title-slide">These slides</a></li>
     <li><a href="https://github.com/ARCLeeds/Techtalks/tree/master/techtalk-containers/containers_examples">Code used in case studies</a></li>
-    <li><a href="https://www.containersup.com/intro/getting-started/index.html">Containers documentation</a></li>
-    <li><a href="https://github.com/iJackUA/awesome-containers">Awesome Containers stuff list </a></li>
+    <li><a href="https://sylabs.io/docs/">Singularity Documentation</a></li>
+    <li><a href="https://hub.docker.com/">Docker Hub</a></li>
+    <li><a href="https://github.com/NVIDIA/hpc-container-maker">HPC Container Maker</a></li>
   </ul>
 </section>
 <section id="coming-up" class="slide level2">
