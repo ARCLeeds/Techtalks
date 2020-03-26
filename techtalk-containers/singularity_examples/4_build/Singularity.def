@@ -1,0 +1,9 @@
+Bootstrap: docker
+From: ubuntu:18.04
+
+%runscript
+    exec /usr/games/bastet
+
+%post
+    /usr/bin/apt-get update 
+    /usr/bin/apt-get install -y bastet
