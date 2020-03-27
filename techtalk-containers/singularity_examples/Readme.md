@@ -9,3 +9,9 @@ vagrant plugin install vagrant-vbguest
 vagrant up
 vagrant ssh
 ```
+
+You can also use the vm from the outside:
+
+```
+vagrant ssh -c 'cd /vagrant/2_gnuplot;sudo singularity build gnuplot.sif Singularity.def'
+```
