@@ -46,8 +46,8 @@ def matpow(M, n):
 Single GPU computing
 '''
 with tf.device('/gpu:0'):
-    a = tf.placeholder(tf.float32, [10000, 10000])
-    b = tf.placeholder(tf.float32, [10000, 10000])
+    a = tf.compat.v1.placeholder(tf.float32, [10000, 10000])
+    b = tf.compat.v1.placeholder(tf.float32, [10000, 10000])
     # Compute A^n and B^n and store results in c1
     c1.append(matpow(a, n))
     c1.append(matpow(b, n))
@@ -56,7 +56,7 @@ with tf.device('/cpu:0'):
   sum = tf.add_n(c1) #Addition of all elements in c1, i.e. A^n + B^n
 
 t1_1 = datetime.datetime.now()
-with tf.Session(config=tf.ConfigProto(log_device_placement=log_device_placement)) as sess:
+with tf.compat.v1.Session(config=tf.compat.v1.ConfigProto(log_device_placement=log_device_placement)) as sess:
     # Run the op.
     sess.run(sum, {a:A, b:B})
 t2_1 = datetime.datetime.now()
