@@ -231,6 +231,17 @@
     </pre>
     You're going to need sudo/root/vagrant at this point.
   </section>
+  <section id="container-run-throughs-gpu" class="slide level2">
+    <ul style="list-style-type:none;">
+      <li>Using GPU - tensorflow</li>
+    </ul>
+    <pre>
+      <code>
+        $ singularity run --nv tensorflow_1.14.0-gpu-py3.sif ./bench.py
+      </code>
+    </pre>
+    You're going to need sudo/root/vagrant at this point.
+  </section>
   <section id="container-run-throughs-host-files" class="slide level2">
     <ul style="list-style-type:none;">
       <li>Accessing host machine files on Containers</li>
