@@ -1,0 +1,3 @@
+[submodule "techtalk-LIDASem/reveal.js"]
+	path = techtalk-LIDASem/reveal.js
+	url = https://github.com/hakimel/reveal.js.git
