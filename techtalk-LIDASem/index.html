@@ -68,9 +68,68 @@ PhD Comics ID 1689
 </section>
 <section id="agenda" class="slide level2">
 <h2>Agenda</h2>
+<p>Today we’re going to touch on ways to make our code reproducible.</p>
+<p>We’ll touch on:</p>
+<ul>
+<li><strong>Basics</strong> - version control and project management</li>
+<li><strong>Conda</strong> - to record environments and manage packages</li>
+<li><strong>Virtual Machines</strong> - using vagrant to script virtual machine configuration</li>
+<li><strong>Containers</strong> - a small, portable approach to sharing environments</li>
+<li><strong>Workflow tools</strong> - AKA Snakemake</li>
+<li><strong>Notebooks</strong> - The computational scientists lab book</li>
+</ul>
 </section>
 <section id="basic-building-blocks" class="slide level2">
 <h2>Basic building blocks</h2>
+<p>The basic building blocks of a good, reproducible project are:</p>
+<ul>
+<li>version control i.e. git</li>
+<li>Simple project management structure</li>
+</ul>
+</section>
+<section id="version-control" class="slide level2">
+<h2>Version control</h2>
+<p>Version control or source control systems are means by which we can track changes in our code.</p>
+<ul>
+<li>It keeps a clear and accountable linear timeline of changes</li>
+<li>Very useful when coding in a team</li>
+<li>Prevents folders filling up with <br> <code>draft1.txt draft1.2.txt draft.1.2.3.txt</code></li>
+<li>We encourage people to use <a href="https://swcarpentry.github.io/git-novice/"><code>git</code></a></li>
+</ul>
+</section>
+<section id="project-management" class="slide level2">
+<h2>Project management</h2>
+<p>Keeping all files relating to a project in a single folder is a good starting point.</p>
+<pre><code>project_name/
+├── README.md             # overview of the project
+├── data/                 # data files used in the project
+│   ├── README.md         # describes where data came from
+│   └── sub-folder/       # may contain subdirectories
+├── processed_data/       # intermediate files from the analysis
+├── manuscript/           # manuscript describing the results
+├── results/              # results of the analysis (data, tables, figures)
+├── src/                  # contains all code in the project
+│   ├── LICENSE           # license for your code
+│   ├── requirements.txt  # software requirements and dependencies
+│   └── ...
+└── doc/                  # documentation for your project
+    ├── index.rst
+    └── ...</code></pre>
+</section>
+<section id="conda" class="slide level2">
+<h2>Conda</h2>
+</section>
+<section id="virtual-machines-and-vagrant" class="slide level2">
+<h2>Virtual machines and Vagrant</h2>
+</section>
+<section id="containers" class="slide level2">
+<h2>Containers</h2>
+</section>
+<section id="workflow-tools" class="slide level2">
+<h2>Workflow tools</h2>
+</section>
+<section id="notebooks" class="slide level2">
+<h2>Notebooks</h2>
 </section>
     </div>
   </div>
