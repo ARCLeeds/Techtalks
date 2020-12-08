@@ -38,6 +38,9 @@ What's all the fuss about?
 
 <img src="images/reproducibility-graphic-online3.jpg" width="400">
 </div>
+<figcaption>
+Images from [Nature](https://www.nature.com/news/1-500-scientists-lift-the-lid-on-reproducibility-1.19970)
+</figcaption>
 
 Agenda
 -------
@@ -93,7 +96,9 @@ project_name/
     ├── index.rst
     └── ...
 ```
-
+<figcaption>
+[Cookie cutter](https://cookiecutter.readthedocs.io/en/1.7.2/) and [RStudio projects](https://swcarpentry.github.io/r-novice-gapminder/02-project-intro/) are a good entry point for this.
+</figcaption>
 
 Conda
 -------
