@@ -2,7 +2,18 @@
 
 See the slides https://arcleeds.github.io/Techtalks/techtalk-LIDASem/#/title-slide
 
+
+To setup the environment:
+
+```bash
+$ conda env create -f environment.yml
+```
+
+To build the slides locally (in index.html file):
+
 ```bash
 # generate the slides using pandoc
-pandoc -s -t revealjs -o index.html slides.md -V theme=None -V revealjs-url=./reveal.js --css src/custom.css
+$ conda activate slides
+
+$ ./pandoc-run
 ```

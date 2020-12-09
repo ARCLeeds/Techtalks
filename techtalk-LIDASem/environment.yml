@@ -2,5 +2,5 @@ name: slides
 channels:
   - defaults
 dependencies:
-  - pandoc
+  - pandoc=2.1.1
 

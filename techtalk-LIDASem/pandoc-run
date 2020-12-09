@@ -1,0 +1,8 @@
+#!/bin/sh
+# a shell script to run pandoc and build the site
+
+pandoc -s -t revealjs -o index.html slides.md \
+                      -V theme=None \
+                      -V revealjs-url=./reveal.js \
+                      --css src/custom.css \
+                      --slide-level=2
