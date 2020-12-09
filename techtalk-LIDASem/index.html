@@ -82,8 +82,9 @@ Images from <a href="https://www.nature.com/news/1-500-scientists-lift-the-lid-o
 <li><strong>Notebooks</strong> - The computational scientists lab book</li>
 </ul>
 </section>
-<section id="basic-building-blocks" class="slide level2">
-<h2>Basic building blocks</h2>
+<section>
+<section id="basic-building-blocks" class="title-slide slide level1">
+<h1>Basic building blocks</h1>
 <p>The basic building blocks of a good, reproducible project are:</p>
 <ul>
 <li>version control i.e. git</li>
@@ -121,22 +122,99 @@ Images from <a href="https://www.nature.com/news/1-500-scientists-lift-the-lid-o
 <figcaption>
 <a href="https://cookiecutter.readthedocs.io/en/1.7.2/">Cookie cutter</a> and <a href="https://swcarpentry.github.io/r-novice-gapminder/02-project-intro/">RStudio projects</a> are a good entry point for this.
 </figcaption>
+</section></section>
+<section>
+<section id="conda" class="title-slide slide level1">
+<h1>Conda</h1>
+<p style="text-align:left;">
+The code we write often depends on other code. Tools such as conda try to help isolate specific dependencies:
+</p>
+<ul>
+<li>Install packages with specific versions</li>
+<li>Record those versions</li>
+<li>Isolate environments with distinct packages</li>
+<li>Using different R/Python versions per project</li>
+<li>Provides tools for sharing environments and packages</li>
+</ul>
 </section>
-<section id="conda" class="slide level2">
-<h2>Conda</h2>
+<section id="conda-illustrated" class="slide level2">
+<h2>Conda illustrated</h2>
+<p><img data-src="images/conda-env2.jpeg" /></p>
+<figcaption>
+Graphic from <a href="https://geohackweek.github.io/datasharing/01-conda-tutorial/">Geohackweek Conda Tutorial</a>
+</figcaption>
 </section>
 <section id="virtual-machines-and-vagrant" class="slide level2">
 <h2>Virtual machines and Vagrant</h2>
+<ul>
+<li>Virtual machines allow us to run an alternate operating system on our host machine.</li>
+<li>They require some set up, but can be super useful</li>
+<li>Vagrant is a tool that can help!</li>
+<li>We write a Vagrant recipe file that allows anyone to replicate the exact operating system environment used to run your code</li>
+<li>We did a TechTalk earlier this year that showcases <a href="https://arc.leeds.ac.uk/Techtalks/techtalk-vagrant/#/title-slide">Vagrant with examples</a></li>
+</ul>
+</section></section>
+<section>
+<section id="containers" class="title-slide slide level1">
+<h1>Containers</h1>
+<div style="display:flex; align-items:center; justify-content: center;">
+<p><img src="images/dockerWhale.png" width="400"></p>
+<p><img src="images/SingularityLogo.svg" width="400"></p>
+</div>
+<figcaption>
+Docker and Singularity Logos
+</figcaption>
 </section>
-<section id="containers" class="slide level2">
-<h2>Containers</h2>
+<section id="whats-all-the-fuss-about-1" class="slide level2">
+<h2>Whats all the fuss about?</h2>
+<ul>
+<li>Containers take the virtual machine idea a step further, and bundle everything into a single package/container</li>
+<li></li>
+</ul>
+</section></section>
+<section id="workflow-tools" class="title-slide slide level1">
+<h1>Workflow tools</h1>
+
 </section>
-<section id="workflow-tools" class="slide level2">
-<h2>Workflow tools</h2>
+
+<section id="notebooks" class="title-slide slide level1">
+<h1>Notebooks</h1>
+
 </section>
-<section id="notebooks" class="slide level2">
-<h2>Notebooks</h2>
+
+<section id="thank-you" class="title-slide slide level1">
+<h1>Thank you</h1>
+<p style="text-align: left;">
+<p>Thanks for listening and I hope you’ve found this talk interesting!</p>
+Research Computing is here to help with all this so get in touch via
+</p>
+<ul>
+<li>Email: <a href="mailto:ask-rc@leeds.ac.uk">ask-rc@leeds.ac.uk</a></li>
+<li>Send us a ticket: https://bit.ly/arc-help</li>
+<li>Reach out to us via Teams</li>
+</ul>
 </section>
+
+<section>
+<section id="a-potted-further-reading-list" class="title-slide slide level1">
+<h1>A potted further reading list</h1>
+
+</section>
+<section id="talks" class="slide level2">
+<h2>Talks</h2>
+<ul>
+<li>Gabriel Becker’s <a href="https://gmbecker.github.io/MayInstituteKeynote2019/outline.html">An Imperfect Guide to Imperfect Reproducibility</a></li>
+<li>Tania Allard’s slide deck on <a href="https://speakerdeck.com/trallard/jupyter-notebooks-friends-or-foes">Jupyter notebooks: Friends or Foes?</a></li>
+</ul>
+</section>
+<section id="projects" class="slide level2">
+<h2>Projects</h2>
+<ul>
+<li><a href="https://the-turing-way.netlify.app/welcome">The Turing Way</a></li>
+<li><a href="https://coderefinery.org/">Coderefinery</a></li>
+<li><a href="https://carpentries.org/">The Carpentries project</a></li>
+</ul>
+</section></section>
     </div>
   </div>
 
