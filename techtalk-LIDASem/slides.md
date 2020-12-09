@@ -60,7 +60,7 @@ We'll touch on:
 The basic building blocks of a good, reproducible project are:
 
 - version control i.e. git
-- Simple project management structure 
+- Simple project management structure
 
 ## Version control
 
@@ -93,6 +93,7 @@ project_name/
     ├── index.rst
     └── ...
 ```
+
 <figcaption>
 [Cookie cutter](https://cookiecutter.readthedocs.io/en/1.7.2/) and [RStudio projects](https://swcarpentry.github.io/r-novice-gapminder/02-project-intro/) are a good entry point for this.
 </figcaption>
@@ -118,15 +119,26 @@ specific dependencies:
 Graphic from [Geohackweek Conda Tutorial](https://geohackweek.github.io/datasharing/01-conda-tutorial/)
 </figcaption>
 
-Virtual machines and Vagrant
------------------------------
+# Virtual machines and Vagrant
 
 - Virtual machines allow us to run an alternate operating system on our host machine.
 - They require some set up, but can be super useful
 - Vagrant is a tool that can help!
-- We write a Vagrant recipe file that allows anyone to replicate the exact operating system environment used to run your code
-- We did a TechTalk earlier this year that showcases [Vagrant with examples](https://arc.leeds.ac.uk/Techtalks/techtalk-vagrant/#/title-slide)
 
+## Vagrantfile
+
+- We write a Vagrant recipe file that allows anyone to replicate the exact operating system environment used to run your code
+
+```
+
+                        Vagrant.configure("2") do |config|
+                            config.vm.box = "hashicorp/bionic64"
+                        end
+
+
+```
+
+- We did a TechTalk earlier this year that showcases [Vagrant with examples](https://arc.leeds.ac.uk/Techtalks/techtalk-vagrant/#/title-slide)
 
 # Containers
 
@@ -134,24 +146,73 @@ Virtual machines and Vagrant
 
 <img src="images/dockerWhale.png" width="400">
 
-
 <img src="images/SingularityLogo.svg" width="400">
 </div>
 <figcaption>
 Docker and Singularity Logos
 </figcaption>
 
-## Whats all the fuss about?
+## 
 
-- Containers take the virtual machine idea a step further, and bundle everything into a single package/container
-- 
+<img src="images/BenWyatt.gif" data-lazy-loaded="" style="width: 60%;">
 
+## What are containers?
+
+- Containers let you bundle up __all__ the ingredients into a single package that you can run
+- This means you don't need a virtual machine and makes them very portable
+- They have drawbacks but can be a powerful tool for sharing code/results
 
 # Workflow tools
 
+## Capturing our workflow takes many forms
+
+## Just remembering where we clicked
+
+<img src="images/keyboard.gif" data-lazy-loaded="" style="width: 60%;">
+
+## Use Bash or GNU Make
+
+<img src="images/magic.gif" data-lazy-loaded="" style="width: 60%;">
+
+## Use workflow tools like Snakemake/Luigi
+
+<img src="images/luigi.gif" data-lazy-loaded="" style="width: 50%;">
+
+## Snakemake and Luigi are workflow managers
+
+<img src="images/snakemake-concept.png" data-lazy-loaded="" style="width: 90%;">
+
+<figcaption>
+Taken from [Snakemake Documentation](https://snakemake.readthedocs.io/en/stable/#)
+</figcaption>
+
+## Snakemake concepts
+
+- Snakemake is easy to learn
+- Available on all platforms and HPC compatible🎉
+- Workflows can scale from laptop to cluster
+
 # Notebooks
 
+## 
+
+<div style="display:flex; align-items:center; justify-content: center;">
+
+<img src="images/Jupyter_logo.png" width="400">
+
+<img src="images/hex-rmarkdown.png" width="400">
+</div>
+<figcaption>
+Jupyter and Rmarkdown logos
+</figcaption>
+
+## 
+
 # Thank you
+
+<img src="images/goodnightgoodluck.gif" data-lazy-loaded="" style="width: 50%;">
+
+## Keep in touch
 
 <p style="text-align: left;">
 Thanks for listening and I hope you've found this talk interesting!

@@ -143,14 +143,28 @@ The code we write often depends on other code. Tools such as conda try to help i
 <figcaption>
 Graphic from <a href="https://geohackweek.github.io/datasharing/01-conda-tutorial/">Geohackweek Conda Tutorial</a>
 </figcaption>
-</section>
-<section id="virtual-machines-and-vagrant" class="slide level2">
-<h2>Virtual machines and Vagrant</h2>
+</section></section>
+<section>
+<section id="virtual-machines-and-vagrant" class="title-slide slide level1">
+<h1>Virtual machines and Vagrant</h1>
 <ul>
 <li>Virtual machines allow us to run an alternate operating system on our host machine.</li>
 <li>They require some set up, but can be super useful</li>
 <li>Vagrant is a tool that can help!</li>
+</ul>
+</section>
+<section id="vagrantfile" class="slide level2">
+<h2>Vagrantfile</h2>
+<ul>
 <li>We write a Vagrant recipe file that allows anyone to replicate the exact operating system environment used to run your code</li>
+</ul>
+<pre><code>
+                        Vagrant.configure(&quot;2&quot;) do |config|
+                            config.vm.box = &quot;hashicorp/bionic64&quot;
+                        end
+
+</code></pre>
+<ul>
 <li>We did a TechTalk earlier this year that showcases <a href="https://arc.leeds.ac.uk/Techtalks/techtalk-vagrant/#/title-slide">Vagrant with examples</a></li>
 </ul>
 </section></section>
@@ -165,36 +179,88 @@ Graphic from <a href="https://geohackweek.github.io/datasharing/01-conda-tutoria
 Docker and Singularity Logos
 </figcaption>
 </section>
-<section id="whats-all-the-fuss-about-1" class="slide level2">
-<h2>Whats all the fuss about?</h2>
+<section id="section" class="slide level2">
+<h2></h2>
+<p><img src="images/BenWyatt.gif" data-lazy-loaded="" style="width: 60%;"></p>
+</section>
+<section id="what-are-containers" class="slide level2">
+<h2>What are containers?</h2>
 <ul>
-<li>Containers take the virtual machine idea a step further, and bundle everything into a single package/container</li>
-<li></li>
+<li>Containers let you bundle up <strong>all</strong> the ingredients into a single package that you can run</li>
+<li>This means you don’t need a virtual machine and makes them very portable</li>
+<li>They have drawbacks but can be a powerful tool for sharing code/results</li>
 </ul>
 </section></section>
+<section>
 <section id="workflow-tools" class="title-slide slide level1">
 <h1>Workflow tools</h1>
 
 </section>
-
+<section id="capturing-our-workflow-takes-many-forms" class="slide level2">
+<h2>Capturing our workflow takes many forms</h2>
+</section>
+<section id="just-remembering-where-we-clicked" class="slide level2">
+<h2>Just remembering where we clicked</h2>
+<p><img src="images/keyboard.gif" data-lazy-loaded="" style="width: 60%;"></p>
+</section>
+<section id="use-bash-or-gnu-make" class="slide level2">
+<h2>Use Bash or GNU Make</h2>
+<p><img src="images/magic.gif" data-lazy-loaded="" style="width: 60%;"></p>
+</section>
+<section id="use-workflow-tools-like-snakemakeluigi" class="slide level2">
+<h2>Use workflow tools like Snakemake/Luigi</h2>
+<p><img src="images/luigi.gif" data-lazy-loaded="" style="width: 50%;"></p>
+</section>
+<section id="snakemake-and-luigi-are-workflow-managers" class="slide level2">
+<h2>Snakemake and Luigi are workflow managers</h2>
+<p><img src="images/snakemake-concept.png" data-lazy-loaded="" style="width: 90%;"></p>
+<figcaption>
+Taken from <a href="https://snakemake.readthedocs.io/en/stable/#">Snakemake Documentation</a>
+</figcaption>
+</section>
+<section id="snakemake-concepts" class="slide level2">
+<h2>Snakemake concepts</h2>
+<ul>
+<li>Snakemake is easy to learn</li>
+<li>Available on all platforms and HPC compatible🎉</li>
+<li>Workflows can scale from laptop to cluster</li>
+</ul>
+</section></section>
+<section>
 <section id="notebooks" class="title-slide slide level1">
 <h1>Notebooks</h1>
 
 </section>
-
+<section id="section-1" class="slide level2">
+<h2></h2>
+<div style="display:flex; align-items:center; justify-content: center;">
+<p><img src="images/Jupyter_logo.png" width="400"></p>
+<p><img src="images/hex-rmarkdown.png" width="400"></p>
+</div>
+<figcaption>
+Jupyter and Rmarkdown logos
+</figcaption>
+</section>
+<section id="section-2" class="slide level2">
+<h2></h2>
+</section></section>
+<section>
 <section id="thank-you" class="title-slide slide level1">
 <h1>Thank you</h1>
+<p><img src="images/goodnightgoodluck.gif" data-lazy-loaded="" style="width: 50%;"></p>
+</section>
+<section id="keep-in-touch" class="slide level2">
+<h2>Keep in touch</h2>
 <p style="text-align: left;">
 <p>Thanks for listening and I hope you’ve found this talk interesting!</p>
 Research Computing is here to help with all this so get in touch via
 </p>
 <ul>
 <li>Email: <a href="mailto:ask-rc@leeds.ac.uk">ask-rc@leeds.ac.uk</a></li>
-<li>Send us a ticket: https://bit.ly/arc-help</li>
+<li>Send us a ticket: <a href="https://bit.ly/arc-help">https://bit.ly/arc-help</a></li>
 <li>Reach out to us via Teams</li>
 </ul>
-</section>
-
+</section></section>
 <section>
 <section id="a-potted-further-reading-list" class="title-slide slide level1">
 <h1>A potted further reading list</h1>
