@@ -23,6 +23,7 @@ The Research Computing Team are a collection of research software engineers and 
 - Adam Keeley
 - Sean Tuck
 - Phil Chambers
+- Nick Rhodes
 - Alex Coleman
 - Samantha Crossfield
 
