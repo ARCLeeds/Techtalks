@@ -1,10 +1,10 @@
 % Tools for Reproducible Research
 % Alex Coleman <br> Research Computing
-% 2020-12-10
+% 10th December 2020
 
 # Get the slides 
 <h2>
-https://bit.ly/RC-LIDA20
+[https://bit.ly/RC-LIDA20](https://bit.ly/RC-LIDA20)
 </h2>
 
 # Got a question?
@@ -14,7 +14,7 @@ Please pop questions in the chat as you think of them. I'll either take them at 
 Who are Research Computing?
 ----------------------------
 
-The Research Computing Team are a collection of research software engineers and data analysts spread across LIDA and central IT including:
+The Research Computing Team are a collection of research software engineers and data analysts spread across LIDA and IT including:
 
 - Mark Conmy
 - Martin Callaghan
@@ -67,7 +67,7 @@ Today we're going to touch on ways to make our code reproducible.
 The basic building blocks of a good, reproducible project are:
 </p>
 
-- version control i.e. git
+- version control e.g. git
 - Simple project management structure
 
 ## Version control
@@ -166,7 +166,7 @@ Docker and Singularity Logos
 
 ## 
 
-<img src="images/BenWyatt.gif" data-lazy-loaded="" style="width: 60%;">
+<img src="images/benWyatt.gif" data-lazy-loaded="" style="width: 60%;">
 
 ## What are containers?
 
@@ -235,7 +235,7 @@ Jupyter and Rmarkdown logos
 ## 
 
 - [BinderHub](https://mybinder.org/), is a service that lets you run your notebooks on the web
-- [Google colab](colab.research.google.com/), a google service that provides a notebook like environment for writing code and easy access to GPUs
+- [Google colab](https://colab.research.google.com/notebooks/intro.ipynb), a google service that provides a notebook like environment for writing code and easy access to GPUs
 - [Jupyter Book](https://jupyterbook.org/intro.html), a package that can turn your notebooks into pdfs or interactive books
 
 # Thank you
@@ -250,8 +250,8 @@ Thanks for listening and I hope you've found this talk interesting!
 Research Computing is here to help with all this so get in touch via
 </p>
 
+- Send us a question: [https://bit.ly/arc-help](https://bit.ly/arc-help)
 - Email: [ask-rc@leeds.ac.uk](mailto:ask-rc@leeds.ac.uk)
-- Send us a ticket: [https://bit.ly/arc-help](https://bit.ly/arc-help)
 - Reach out to us via Teams
 
 # A potted further reading list
