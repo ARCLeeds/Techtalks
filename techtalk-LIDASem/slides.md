@@ -58,7 +58,7 @@ Today we're going to touch on ways to make our code reproducible.
 - __Conda__ \- to record environments and manage packages
 - __Virtual Machines__ \- using vagrant to script virtual machine configuration
 - __Containers__ \- a small, portable approach to sharing environments
-- __Workflow tools__ \- AKA Snakemake
+- __Workflow tools__ \- e.g. Snakemake, Luigi
 - __Notebooks__ \- The computational scientists lab book
 
 # Basic building blocks
