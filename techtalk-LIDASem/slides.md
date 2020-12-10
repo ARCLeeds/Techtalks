@@ -261,9 +261,13 @@ Research Computing is here to help with all this so get in touch via
 
 - Gabriel Becker's [An Imperfect Guide to Imperfect Reproducibility](https://gmbecker.github.io/MayInstituteKeynote2019/outline.html)
 - Tania Allard's slide deck on [Jupyter notebooks: Friends or Foes?](https://speakerdeck.com/trallard/jupyter-notebooks-friends-or-foes)
+- Making your code citable from [GitHub](https://guides.github.com/activities/citable-code/)
 
 ## Projects
 
 - [The Turing Way](https://the-turing-way.netlify.app/welcome)
 - [Coderefinery](https://coderefinery.org/)
 - [The Carpentries project](https://carpentries.org/)
+- [UK Reproducibility Network](https://www.ukrn.org/)
+- [ReproducibiliTea Leeds](https://osf.io/qvyk4/)
+- [University of Leeds Library Open research guide](https://library.leeds.ac.uk/info/1406/researcher_support/199/open_research)
