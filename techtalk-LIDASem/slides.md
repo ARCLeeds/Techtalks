@@ -253,6 +253,7 @@ Research Computing is here to help with all this so get in touch via
 - Send us a question: [https://bit.ly/arc-help](https://bit.ly/arc-help)
 - Email: [ask-rc@leeds.ac.uk](mailto:ask-rc@leeds.ac.uk)
 - Reach out to us via Teams
+- Link to the [GitHub repo](https://github.com/ARCLeeds/Techtalks/tree/master/techtalk-LIDASem) for these slides
 
 # A potted further reading list
 
