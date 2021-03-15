@@ -4,7 +4,7 @@
 
 # Get the slides 
 <h2>
-[https://bit.ly/RC-LIDA20](https://bit.ly/RC-LIDA20)
+[https://bit.ly/RC-openlunch](https://bit.ly/RC-openlunch)
 </h2>
 
 # Got a question?
