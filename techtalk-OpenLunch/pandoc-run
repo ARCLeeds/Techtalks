@@ -3,6 +3,6 @@
 
 pandoc -s -t revealjs -o index.html slides.md \
                       -V theme=None \
-                      -V revealjs-url=./reveal.js \
+                      -V revealjs-url=./revealjs \
                       --css src/custom.css \
                       --slide-level=2
