@@ -1,0 +1,6 @@
+name: slides
+channels:
+  - defaults
+dependencies:
+  - pandoc=2.1.1
+

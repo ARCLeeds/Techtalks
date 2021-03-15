@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="generator" content="pandoc">
+  <meta name="author" content="Alex Coleman   Research Computing">
+  <title>Tools for Reproducible Research</title>
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+  <link rel="stylesheet" href="./reveal.js/dist/reset.css">
+  <link rel="stylesheet" href="./reveal.js/dist/reveal.css">
+  <style>
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    span.underline{text-decoration: underline;}
+    div.column{display: inline-block; vertical-align: top; width: 50%;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+    .display.math{display: block; text-align: center; margin: 0.5rem auto;}
+  </style>
+  <link rel="stylesheet" href="./reveal.js/dist/theme/None.css" id="theme">
+  <link rel="stylesheet" href="src/custom.css"/>
+</head>
+<body>
+  <div class="reveal">
+    <div class="slides">
+
+<section id="title-slide">
+  <h1 class="title">Tools for Reproducible Research</h1>
+  <p class="author">Alex Coleman <br> Research Computing</p>
+  <p class="date">10th December 2020</p>
+</section>
+
+<section id="get-the-slides" class="title-slide slide level1">
+<h1>Get the slides</h1>
+<h2>
+<a href="https://bit.ly/RC-LIDA20">https://bit.ly/RC-LIDA20</a>
+</h2>
+</section>
+
+<section>
+<section id="got-a-question" class="title-slide slide level1">
+<h1>Got a question?</h1>
+<p>Please pop questions in the chat as you think of them. I’ll either take them at the end or if I find a good moment to respond.</p>
+</section>
+<section id="who-are-research-computing" class="slide level2">
+<h2>Who are Research Computing?</h2>
+<p>The Research Computing Team are a collection of research software engineers and data analysts spread across LIDA and IT including:</p>
+<ul>
+<li>Mark Conmy</li>
+<li>Martin Callaghan</li>
+<li>John Hodrien</li>
+<li>Ollie Clark</li>
+<li>Adam Keeley</li>
+<li>Sean Tuck</li>
+<li>Phil Chambers</li>
+<li>Nick Rhodes</li>
+<li>Alex Coleman</li>
+<li>Samantha Crossfield</li>
+</ul>
+</section></section>
+<section>
+<section id="motivations" class="title-slide slide level1">
+<h1>Motivations</h1>
+<img data-src="images/phdComicsSoftware.gif" />
+<figcaption>
+PhD Comics ID 1689
+</figcaption>
+</section>
+<section id="whats-all-the-fuss-about" class="slide level2">
+<h2>What’s all the fuss about?</h2>
+<div style="display:flex; align-items:center; justify-content: center;">
+<p><img src="images/reproducibility-graphic-online1.jpeg" width="400"></p>
+<p><img src="images/reproducibility-graphic-online3.jpg" width="400"></p>
+</div>
+<figcaption>
+Images from <a href="https://www.nature.com/news/1-500-scientists-lift-the-lid-on-reproducibility-1.19970">Nature</a>
+</figcaption>
+</section></section>
+<section id="agenda" class="title-slide slide level1">
+<h1>Agenda</h1>
+<p style="text-align:left;">
+Today we’re going to touch on ways to make our code reproducible.
+</p>
+<ul>
+<li><strong>Basics</strong> - version control and project management</li>
+<li><strong>Conda</strong> - to record environments and manage packages</li>
+<li><strong>Virtual Machines</strong> - using vagrant to script virtual machine configuration</li>
+<li><strong>Containers</strong> - a small, portable approach to sharing environments</li>
+<li><strong>Workflow tools</strong> - e.g. Snakemake, Luigi</li>
+<li><strong>Notebooks</strong> - The computational scientists lab book</li>
+</ul>
+</section>
+
+<section>
+<section id="basic-building-blocks" class="title-slide slide level1">
+<h1>Basic building blocks</h1>
+<p style="text-align:left;">
+The basic building blocks of a good, reproducible project are:
+</p>
+<ul>
+<li>version control e.g. git</li>
+<li>Simple project management structure</li>
+</ul>
+</section>
+<section id="version-control" class="slide level2">
+<h2>Version control</h2>
+<p style="text-align:left;">
+Version control or source control systems are means by which we can track changes in our code.
+</p>
+<ul>
+<li>It keeps a clear and accountable linear timeline of changes</li>
+<li>Very useful when coding in a team</li>
+<li>Prevents folders filling up with <br> <code>draft1.txt draft1.2.txt draft.1.2.3.txt</code></li>
+<li>We encourage people to use <a href="https://swcarpentry.github.io/git-novice/"><code>git</code></a></li>
+</ul>
+</section>
+<section id="project-management" class="slide level2">
+<h2>Project management</h2>
+<p style="text-align:left;">
+Keeping all files relating to a project in a single folder is a good starting point.
+</p>
+<pre><code>project_name/
+├── README.md             # overview of the project
+├── data/                 # data files used in the project
+│   ├── README.md         # describes where data came from
+│   └── sub-folder/       # may contain subdirectories
+├── processed_data/       # intermediate files from the analysis
+├── manuscript/           # manuscript describing the results
+├── results/              # results of the analysis (data, tables, figures)
+├── src/                  # contains all code in the project
+│   ├── LICENSE           # license for your code
+│   ├── requirements.txt  # software requirements and dependencies
+│   └── ...
+└── doc/                  # documentation for your project
+    ├── index.rst
+    └── ...</code></pre>
+<figcaption>
+<a href="https://cookiecutter.readthedocs.io/en/1.7.2/">Cookie cutter</a> and <a href="https://swcarpentry.github.io/r-novice-gapminder/02-project-intro/">RStudio projects</a> are a good entry point for this.
+</figcaption>
+</section></section>
+<section>
+<section id="conda" class="title-slide slide level1">
+<h1>Conda</h1>
+<p style="text-align:left;">
+The code we write often depends on other code. Tools such as conda try to help isolate specific dependencies:
+</p>
+<ul>
+<li>Install packages with specific versions</li>
+<li>Record those versions</li>
+<li>Isolate environments with distinct packages</li>
+<li>Using different R/Python versions per project</li>
+<li>Provides tools for sharing environments and packages</li>
+</ul>
+</section>
+<section id="conda-illustrated" class="slide level2">
+<h2>Conda illustrated</h2>
+<p><img data-src="images/conda-env2.jpeg" /></p>
+<figcaption>
+Graphic from <a href="https://geohackweek.github.io/datasharing/01-conda-tutorial/">Geohackweek Conda Tutorial</a>
+</figcaption>
+</section></section>
+<section>
+<section id="virtual-machines-and-vagrant" class="title-slide slide level1">
+<h1>Virtual machines and Vagrant</h1>
+<ul>
+<li>Virtual machines allow us to run an alternate operating system on our host machine.</li>
+<li>They require some set up, but can be super useful</li>
+<li>Vagrant is a tool that can help!</li>
+</ul>
+</section>
+<section id="vagrantfile" class="slide level2">
+<h2>Vagrantfile</h2>
+<ul>
+<li>We write a Vagrant recipe file that allows anyone to replicate the exact operating system environment used to run your code</li>
+</ul>
+<pre><code>
+                        Vagrant.configure(&quot;2&quot;) do |config|
+                            config.vm.box = &quot;hashicorp/bionic64&quot;
+                        end
+
+</code></pre>
+<ul>
+<li>We did a TechTalk earlier this year that showcases <a href="https://arc.leeds.ac.uk/Techtalks/techtalk-vagrant/#/title-slide">Vagrant with examples</a></li>
+</ul>
+</section></section>
+<section>
+<section id="containers" class="title-slide slide level1">
+<h1>Containers</h1>
+<div style="display:flex; align-items:center; justify-content: center;">
+<p><img src="images/dockerWhale.png" width="400"></p>
+<p><img src="images/SingularityLogo.svg" width="400"></p>
+</div>
+<figcaption>
+Docker and Singularity Logos
+</figcaption>
+</section>
+<section id="section" class="slide level2">
+<h2></h2>
+<p><img src="images/benWyatt.gif" data-lazy-loaded="" style="width: 60%;"></p>
+</section>
+<section id="what-are-containers" class="slide level2">
+<h2>What are containers?</h2>
+<ul>
+<li>Containers let you bundle up <strong>all</strong> the ingredients into a single package that you can run</li>
+<li>This means you don’t need a virtual machine and makes them very portable</li>
+<li>They have drawbacks but can be a powerful tool for sharing code/results</li>
+</ul>
+</section></section>
+<section>
+<section id="workflow-tools" class="title-slide slide level1">
+<h1>Workflow tools</h1>
+
+</section>
+<section id="capturing-our-workflow-takes-many-forms" class="slide level2">
+<h2>Capturing our workflow takes many forms</h2>
+</section>
+<section id="just-remembering-where-we-clicked" class="slide level2">
+<h2>Just remembering where we clicked</h2>
+<p><img src="images/keyboard.gif" data-lazy-loaded="" style="width: 60%;"></p>
+</section>
+<section id="use-bash-or-gnu-make" class="slide level2">
+<h2>Use Bash or GNU Make</h2>
+<p><img src="images/magic.gif" data-lazy-loaded="" style="width: 60%;"></p>
+</section>
+<section id="use-workflow-tools-like-snakemakeluigi" class="slide level2">
+<h2>Use workflow tools like Snakemake/Luigi</h2>
+<p><img src="images/luigi.gif" data-lazy-loaded="" style="width: 50%;"></p>
+</section>
+<section id="snakemake-and-luigi-are-workflow-managers" class="slide level2">
+<h2>Snakemake and Luigi are workflow managers</h2>
+<p><img src="images/snakemake-concept.png" data-lazy-loaded="" style="width: 90%;"></p>
+<figcaption>
+Taken from <a href="https://snakemake.readthedocs.io/en/stable/#">Snakemake Documentation</a>
+</figcaption>
+</section>
+<section id="snakemake-concepts" class="slide level2">
+<h2>Snakemake concepts</h2>
+<ul>
+<li>Snakemake is easy to learn</li>
+<li>Available on all platforms and HPC compatible🎉</li>
+<li>Workflows can scale from laptop to cluster</li>
+</ul>
+</section></section>
+<section>
+<section id="notebooks" class="title-slide slide level1">
+<h1>Notebooks</h1>
+
+</section>
+<section id="section-1" class="slide level2">
+<h2></h2>
+<div style="display:flex; align-items:center; justify-content: center;">
+<p><img src="images/Jupyter_logo.png" width="400"></p>
+<p><img src="images/hex-rmarkdown.png" width="400"></p>
+</div>
+<figcaption>
+Jupyter and Rmarkdown logos
+</figcaption>
+</section>
+<section id="jupyter" class="slide level2">
+<h2>Jupyter</h2>
+<p><img src="images/jupyterlab.png" data-lazy-loaded="" style="width: 90%;"></p>
+</section>
+<section id="jupyter-1" class="slide level2">
+<h2>Jupyter</h2>
+<ul>
+<li>JupyterLab is an interactive development environment</li>
+<li>It lets you code, write notes, include graphics</li>
+<li>You can run it in Python, R, Julia and many <a href="https://github.com/jupyter/jupyter/wiki/Jupyter-kernels">others</a></li>
+</ul>
+</section>
+<section id="reproducify-your-notebooks" class="slide level2">
+<h2>Reproducify your notebooks</h2>
+<p><img src="images/freshprince.gif" data-lazy-loaded="" style="width: 60%;"></p>
+</section>
+<section id="section-2" class="slide level2">
+<h2></h2>
+<ul>
+<li><a href="https://mybinder.org/">BinderHub</a>, is a service that lets you run your notebooks on the web</li>
+<li><a href="https://colab.research.google.com/notebooks/intro.ipynb">Google colab</a>, a google service that provides a notebook like environment for writing code and easy access to GPUs</li>
+<li><a href="https://jupyterbook.org/intro.html">Jupyter Book</a>, a package that can turn your notebooks into pdfs or interactive books</li>
+</ul>
+</section></section>
+<section>
+<section id="thank-you" class="title-slide slide level1">
+<h1>Thank you</h1>
+<p><img src="images/goodnightgoodluck.gif" data-lazy-loaded="" style="width: 50%;"></p>
+</section>
+<section id="keep-in-touch" class="slide level2">
+<h2>Keep in touch</h2>
+<p style="text-align: left;">
+<p>Thanks for listening and I hope you’ve found this talk interesting!</p>
+Research Computing is here to help with all this so get in touch via
+</p>
+<ul>
+<li>Send us a question: <a href="https://bit.ly/arc-help">https://bit.ly/arc-help</a></li>
+<li>Email: <a href="mailto:ask-rc@leeds.ac.uk">ask-rc@leeds.ac.uk</a></li>
+<li>Reach out to us via Teams</li>
+<li>Link to the <a href="https://github.com/ARCLeeds/Techtalks/tree/master/techtalk-LIDASem">GitHub repo</a> for these slides</li>
+</ul>
+</section></section>
+<section>
+<section id="a-potted-further-reading-list" class="title-slide slide level1">
+<h1>A potted further reading list</h1>
+
+</section>
+<section id="talks" class="slide level2">
+<h2>Talks</h2>
+<ul>
+<li>Gabriel Becker’s <a href="https://gmbecker.github.io/MayInstituteKeynote2019/outline.html">An Imperfect Guide to Imperfect Reproducibility</a></li>
+<li>Tania Allard’s slide deck on <a href="https://speakerdeck.com/trallard/jupyter-notebooks-friends-or-foes">Jupyter notebooks: Friends or Foes?</a></li>
+<li>Making your code citable from <a href="https://guides.github.com/activities/citable-code/">GitHub</a></li>
+</ul>
+</section>
+<section id="projects" class="slide level2">
+<h2>Projects</h2>
+<ul>
+<li><a href="https://the-turing-way.netlify.app/welcome">The Turing Way</a></li>
+<li><a href="https://coderefinery.org/">Coderefinery</a></li>
+<li><a href="https://carpentries.org/">The Carpentries project</a></li>
+<li><a href="https://www.ukrn.org/">UK Reproducibility Network</a></li>
+<li><a href="https://osf.io/qvyk4/">ReproducibiliTea Leeds</a></li>
+<li><a href="https://library.leeds.ac.uk/info/1406/researcher_support/199/open_research">University of Leeds Library Open research guide</a></li>
+</ul>
+</section></section>
+    </div>
+  </div>
+
+  <script src="./reveal.js/dist/reveal.js"></script>
+
+  // reveal.js plugins
+  <script src="./reveal.js/plugin/notes/notes.js"></script>
+  <script src="./reveal.js/plugin/search/search.js"></script>
+  <script src="./reveal.js/plugin/zoom/zoom.js"></script>
+
+  <script>
+
+      // Full list of configuration options available at:
+      // https://revealjs.com/config/
+      Reveal.initialize({
+        // Push each slide change to the browser history
+        history: true,
+
+        // reveal.js plugins
+        plugins: [
+          RevealNotes,
+          RevealSearch,
+          RevealZoom
+        ]
+      });
+    </script>
+    </body>
+</html>
