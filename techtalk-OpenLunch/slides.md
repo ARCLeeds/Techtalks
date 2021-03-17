@@ -254,7 +254,7 @@ Research Computing is here to help with all this so get in touch via
 - Send us a question: [https://bit.ly/arc-help](https://bit.ly/arc-help)
 - Email: [ask-rc@leeds.ac.uk](mailto:ask-rc@leeds.ac.uk)
 - Reach out to us via Teams
-- Link to the [GitHub repo](https://github.com/ARCLeeds/Techtalks/tree/master/techtalk-LIDASem) for these slides
+- Link to the [GitHub repo](https://github.com/ARCLeeds/Techtalks/tree/master/techtalk-OpenLunch) for these slides
 
 # A potted further reading list
 
@@ -263,7 +263,6 @@ Research Computing is here to help with all this so get in touch via
 - Gabriel Becker's [An Imperfect Guide to Imperfect Reproducibility](https://gmbecker.github.io/MayInstituteKeynote2019/outline.html)
 - Tania Allard's slide deck on [Jupyter notebooks: Friends or Foes?](https://speakerdeck.com/trallard/jupyter-notebooks-friends-or-foes)
 - Making your code citable from [GitHub](https://guides.github.com/activities/citable-code/)
-- Code for this talk on [GitHub](https://github.com/ARCLeeds/Techtalks/tree/master/techtalk-OpenLunch)
 
 ## Projects
 
