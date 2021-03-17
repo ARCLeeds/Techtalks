@@ -151,7 +151,7 @@ Graphic from [Geohackweek Conda Tutorial](https://geohackweek.github.io/datashar
 
 ```
 
-- We did a TechTalk earlier this year that showcases [Vagrant with examples](https://arc.leeds.ac.uk/Techtalks/techtalk-vagrant/#/title-slide)
+- We did a TechTalk last year that showcases [Vagrant with examples](https://arc.leeds.ac.uk/Techtalks/techtalk-vagrant/#/title-slide)
 
 # Containers
 
@@ -263,6 +263,7 @@ Research Computing is here to help with all this so get in touch via
 - Gabriel Becker's [An Imperfect Guide to Imperfect Reproducibility](https://gmbecker.github.io/MayInstituteKeynote2019/outline.html)
 - Tania Allard's slide deck on [Jupyter notebooks: Friends or Foes?](https://speakerdeck.com/trallard/jupyter-notebooks-friends-or-foes)
 - Making your code citable from [GitHub](https://guides.github.com/activities/citable-code/)
+- Code for this talk on [GitHub](https://github.com/ARCLeeds/Techtalks/tree/master/techtalk-OpenLunch)
 
 ## Projects
 
