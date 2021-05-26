@@ -4,3 +4,6 @@
 [submodule "techtalk-OpenLunch/revealjs"]
 	path = techtalk-OpenLunch/revealjs
 	url = https://github.com/hakimel/reveal.js
+[submodule "techtalk-vagrant/revealjs"]
+	path = techtalk-vagrant/revealjs
+	url = https://github.com/hakimel/reveal.js
