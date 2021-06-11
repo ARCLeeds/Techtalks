@@ -1,1 +1,0 @@
-../techtalk-vagrant/reveal.js
